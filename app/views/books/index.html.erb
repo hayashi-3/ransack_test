@@ -1,0 +1,14 @@
+<h1>index</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :title, "title" %>
+  <%= f.search_field :title_eq %>
+
+  <%= f.submit "検索" %>
+<% end %>
+
+<% @books.each do |b|%>
+  <%= b.title %>
+  <%= b.body %>
+  <%= link_to "show", book_path(b) %>
+<% end %>
+<%= link_to  "new", new_book_path %>
